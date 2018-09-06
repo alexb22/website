@@ -1158,6 +1158,10 @@ img.certification {
     .panel > p {
     	font-size: 15px;
     }
+	
+    .panel {
+    	padding: 0px 0px;
+    }
 
     .progress-bar > h4 {
     	margin: 2px 0;
@@ -1229,6 +1233,7 @@ img.certification {
 
 	.description {
 		font-size: 13px;
+		width: 95%;
 	}
 
 	.navigation a {
