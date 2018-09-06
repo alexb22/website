@@ -1124,7 +1124,7 @@ img.certification {
     .container-heading {
     	text-align: center;
     	width: 100%;
-    	font-size: 20px;
+    	font-size: 23px;
     }
     .no-hover {
     	margin-left: 0;
@@ -1216,7 +1216,7 @@ img.certification {
 		display: flex;
 		text-align: center;
 		width: 100%;
-		font-size: 25px;
+		font-size: 23px;
 	}
 
 	.container-heading-left {
@@ -1224,11 +1224,11 @@ img.certification {
 		display: flex;
 		text-align: center;
 		width: 100%;
-		font-size: 25px;
+		font-size: 23px;
 	}
 
 	.container-heading-center {
-		font-size: 25px;
+		font-size: 23px;
 	}
 
 	.description {
