@@ -168,8 +168,8 @@ header::before {
 	width: auto;
 	margin: auto;
 	overflow: visible;
-	padding-left: 5px;
-	padding-right: 5px;
+	padding-left: 0px;
+	padding-right: 0px;
 	padding-top: 0px;
 	padding-bottom: 0px;
 	font-size: 30px;
@@ -1241,6 +1241,10 @@ img.certification {
 
 	.experience-heading {
 		font-size: 20px;
+	}
+	
+	.container {
+		width: 90%;
 	}
 }
 
