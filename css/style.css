@@ -206,13 +206,7 @@ header::before {
 	opacity: 1;
 	text-align: center;
 	white-space: nowrap;
-	background: #348f50;
-  	background: -webkit-linear-gradient(to right, #348f50, #56b4d3);
-  	background: linear-gradient(to right, #348f50, #56b4d3);
-  	-webkit-background-clip: text;
-  	background-clip: text;
-  	-webkit-text-fill-color: transparent;
-  	color: #34495E;
+	color: #001F3F;
   	transition: transform 0.1s ease-out;
 }
 
@@ -260,8 +254,7 @@ header::before {
 #about {
 	height: auto;
 	position: relative;
-	background: #F8F9F9;
-	color: black;
+	background: #ddd;
 	padding-top: 100px;
 	padding-bottom: 150px;
 }
@@ -278,7 +271,7 @@ header::before {
 	right: 0;
 	top: -100px;
 	z-index: 1;
-	background: #F8F9F9;
+	background: #ddd;
 	-webkit-clip-path: polygon(0 0, 0% 100%, 100% 100%);
 	clip-path: polygon(0 0, 0% 100%, 100% 100%);
 }
