@@ -206,11 +206,6 @@ navIcon.addEventListener("click", function() {
 	navHeader.toggleClass("showing");
 	navigation.toggleClass("nav-showing")
 	hamburgerIcon.toggleClass("clicked");
-  if (!flagged) {
-    flagged = true;
-    for (y = 0; y < navElements.length; y++) {
-      navigationTimeline.set(navElements[y], {className: "+=animated fadeInUp"}, "-=0.2");
-    }
-  }
+  	navigationTimeline.set(navigation, {className: "+=animated fadeInUp"}, "-=0.2");
 });
 
