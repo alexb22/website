@@ -524,7 +524,7 @@ p.col-3 {
 	list-style-type: none;
 	position: fixed;
 	z-index: 104;
-	opacity: 1
+	opacity: 0;
 }
 
 .navigation li {
