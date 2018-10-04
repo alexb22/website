@@ -19,6 +19,7 @@ var flagged = false;
 $(document).ready(init);
 
 function init() {
+  $(document.body).on('touchmove', onScroll);
   var j;
   var scrollMagicController = new ScrollMagic.Controller({vertical: true});
 
