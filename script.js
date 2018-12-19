@@ -12,7 +12,6 @@ var moveElements = $('.move');
 var moveElementHeight = moveElements.eq(0).height();
 var portfolioImages = $('.portfolio-img');
 var navigationBlock = $('.navigation');
-var navigationAnchors = $('.navigation a');
 var navElements = $('.navElement');
 var flagged = false;
 
@@ -158,9 +157,9 @@ function getWindowStats() {
 $(window).resize(getWindowStats);
 
 $(".navigation a").hover(function(){
-	        $(this).next().addClass("hoverActive");
-	        }, function(){
-	        $(this).next().removeClass("hoverActive");
+          $(this).next().addClass("hoverActive");
+          }, function(){
+          $(this).next().removeClass("hoverActive");
 });
 
 var cards = document.getElementsByClassName("card");
@@ -170,42 +169,60 @@ for (i = 0; i < cards.length; i++) {
   cards[i].addEventListener("click", function() {
     var panelForwards = new TimelineLite();
     var panelReverse = new TimelineLite();
-  	var isPanelActive;
-  	if (this.classList.contains("experience-active")) {
-  		isPanelActive = true;
-  	}
-  	else {
-  		isPanelActive = false;
-  	}
-  	var activePanels = document.getElementsByClassName("experience-active");
-  	if (activePanels.length > 0) {
-  		var j;
-  		for (j = 0; j < activePanels.length; j++) {
-  			var currentPanel = activePanels[j].nextElementSibling;
-  			activePanels[j].classList.remove("experience-active");
-  			panelReverse.fromTo(currentPanel, 0.2, {maxHeight: currentPanel.scrollHeight}, {maxHeight: 0});
-  		}
-  	}
-  	if (!isPanelActive) {
-  		this.classList.toggle("experience-active");
-	    var panel = this.nextElementSibling;
-	    if (panel.style.maxHeight > 0){
+    var isPanelActive;
+    if (this.classList.contains("experience-active")) {
+      isPanelActive = true;
+    }
+    else {
+      isPanelActive = false;
+    }
+    var activePanels = document.getElementsByClassName("experience-active");
+    if (activePanels.length > 0) {
+      var j;
+      for (j = 0; j < activePanels.length; j++) {
+        var currentPanel = activePanels[j].nextElementSibling;
+        activePanels[j].classList.remove("experience-active");
+        panelReverse.fromTo(currentPanel, 0.2, {maxHeight: currentPanel.scrollHeight}, {maxHeight: 0});
+      }
+    }
+    if (!isPanelActive) {
+      this.classList.toggle("experience-active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight > 0){
         panelReverse.fromTo(panel, 0.2, {maxHeight: panel.scrollHeight}, {maxHeight: 0});
-	    } else {
+      } else {
         panelForwards.fromTo(panel, 0.2, {maxHeight: 0}, {maxHeight: panel.scrollHeight});
-	    }
-  	} 
+      }
+    } 
   });
 
 }
 
+var showFlag = false;
 var navigationTimeline = new TimelineLite();
-var y;
+navigationTimeline.set(navigation, {className: "+=animated fadeInUp"}, "-=0.2");
 var navIcon = document.getElementById("nav-icon");
 navIcon.addEventListener("click", function() {
-	navHeader.toggleClass("showing");
-	navigation.toggleClass("nav-showing")
-	hamburgerIcon.toggleClass("clicked");
-  	navigationTimeline.set(navigation, {className: "+=animated fadeInUp"}, "-=0.2");
+  if (showFlag) {
+    showFlag = false;
+  }
+  else {
+    showFlag = true;
+  }
+  navHeader.toggleClass("showing");
+  navigation.toggleClass("nav-showing")
+  hamburgerIcon.toggleClass("clicked");
+  if (showFlag) {
+    navigationTimeline.play();
+  }
 });
+
+for (a=0; a < navElements.length; a++) {
+  navElements[a].addEventListener("click", function() {
+    navHeader.toggleClass("showing");
+    navigation.toggleClass("nav-showing")
+    hamburgerIcon.toggleClass("clicked");
+  });
+}
+
 
